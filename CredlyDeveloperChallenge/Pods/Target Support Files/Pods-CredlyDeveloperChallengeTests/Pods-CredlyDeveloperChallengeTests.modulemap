@@ -1,0 +1,6 @@
+framework module Pods_CredlyDeveloperChallengeTests {
+  umbrella header "Pods-CredlyDeveloperChallengeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
