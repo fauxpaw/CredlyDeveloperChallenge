@@ -28,7 +28,6 @@ class API {
     /// Fetch users leveraging SwiftyJson
     static func getSwfityUsers(completion: @escaping ([UserContact])-> Void) {
         AF.request("https://jsonplaceholder.typicode.com/users").response { response in
-//            debugPrint(response.data)
             
             var contacts = [UserContact]()
             guard let data = response.data else {
@@ -43,7 +42,7 @@ class API {
                     let email = subJson["email"].stringValue
                     let id = subJson["id"].intValue
                     let phone = subJson["phone"].stringValue
-                    let contact = UserContact(id: id, name: name, username: username, email: email, phone: "phone")
+                    let contact = UserContact(id: id, name: name, username: username, email: email, phone: phone)
                     contacts.append(contact)
                 }
             } catch (let error) {
