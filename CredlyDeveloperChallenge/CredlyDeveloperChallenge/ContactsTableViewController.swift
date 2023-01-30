@@ -7,35 +7,34 @@
 
 import UIKit
 
+private enum DataFetchType {
+    case SwiftyJson
+    case Decodable
+}
+
 class ContactsTableViewController: UITableViewController {
 
-    var users = [UserContact]()
-    var isFetching: Bool = false
+    private var users = [UserContact]()
+    private var isFetching: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
-        
-//        API.getUsers { users in
-//            self.users = users
-//            self.tableView.reloadData()
-//        }
-        
-        API.getSwfityUsers { users in
-            self.users = users
-            self.tableView.reloadData()
-        }
+        self.tableView.delegate = self
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.attributedTitle = NSAttributedString(string: "Refreshing contacts ...")
+        self.tableView.refreshControl?.addTarget(self, action: #selector(refreshUserContacts(_:)), for: .valueChanged)
+        self.tableView.refreshControl?.tintColor = UIColor(red: 0.25, green: 0.72, blue: 0.85, alpha: 1.0)
+        fetchUserContacts(with: .SwiftyJson)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return users.count
     }
 
@@ -47,6 +46,32 @@ class ContactsTableViewController: UITableViewController {
         cell.emailLabel.text = user.email
         cell.phoneNumberLabel.text = user.phone
         return cell
+    }
+    
+    private func fetchUserContacts(with: DataFetchType) {
+        
+        switch with {
+        case .SwiftyJson:
+            API.getSwfityUsers { users in
+                self.users = users
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+                    self.tableView.reloadData()
+                }
+            }
+        case .Decodable:
+            API.getUsers { users in
+                self.users = users
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    @objc private func refreshUserContacts(_ sender: Any) {
+        fetchUserContacts(with: .SwiftyJson)
     }
 
     /*
