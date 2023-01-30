@@ -3,63 +3,68 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Contacts Table View Controller-->
+        <!--Contacts-->
         <scene sceneID="nd7-lP-qz1">
             <objects>
-                <tableViewController id="dDC-5C-Sbq" customClass="ContactsTableViewController" customModule="CredlyDeveloperChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="m2L-F0-Ddk">
+                <tableViewController title="Contacts" id="dDC-5C-Sbq" customClass="ContactsTableViewController" customModule="CredlyDeveloperChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="m2L-F0-Ddk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.54509806630000002" green="0.78431367870000002" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" id="JIe-vK-id5" customClass="UserContactTableViewCell" customModule="CredlyDeveloperChallenge" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="85.333335876464844"/>
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="96.666664123535156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JIe-vK-id5" id="fBE-BV-VWJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="85.333335876464844"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="96.666664123535156"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IKO-az-d4t">
-                                            <rect key="frame" x="130" y="8" width="255" height="69.333333333333329"/>
+                                            <rect key="frame" x="138" y="16" width="247" height="64.666666666666671"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh2-ec-so1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="255" height="20.333333333333332"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="247" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Email Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KR4-jg-9TM" userLabel="Email Label">
-                                                    <rect key="frame" x="0.0" y="24.333333333333336" width="255" height="20.666666666666664"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="24.333333333333336" width="247" height="18.333333333333336"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKO-2j-qfp" userLabel="Phone Number label">
-                                                    <rect key="frame" x="0.0" y="49" width="255" height="20.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="46.666666666666664" width="247" height="17.999999999999993"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Initials Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5E-7E-rrw">
-                                            <rect key="frame" x="28" y="32.666666666666664" width="94" height="20.333333333333336"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Initials Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5E-7E-rrw">
+                                            <rect key="frame" x="28" y="1.3333333333333357" width="94" height="94"/>
+                                            <color key="backgroundColor" red="0.93725490570000003" green="0.58039218189999997" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="d5E-7E-rrw" secondAttribute="height" multiplier="1:1" id="3wI-7b-xGt"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="tAV-zN-aIp"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.93725490570000003" green="0.92549026010000002" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.9529411793" green="0.8392156959" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstItem="d5E-7E-rrw" firstAttribute="leading" secondItem="fBE-BV-VWJ" secondAttribute="leadingMargin" constant="8" id="7Q6-rZ-2eH"/>
                                         <constraint firstItem="d5E-7E-rrw" firstAttribute="centerY" secondItem="fBE-BV-VWJ" secondAttribute="centerY" id="M4k-IM-9M5"/>
                                         <constraint firstAttribute="trailing" secondItem="IKO-az-d4t" secondAttribute="trailing" constant="8" id="QfC-BW-UKN"/>
-                                        <constraint firstItem="IKO-az-d4t" firstAttribute="leading" secondItem="d5E-7E-rrw" secondAttribute="trailing" constant="8" id="pmw-xn-KMh"/>
-                                        <constraint firstItem="IKO-az-d4t" firstAttribute="top" secondItem="fBE-BV-VWJ" secondAttribute="top" constant="8" id="vvw-a1-dOo"/>
-                                        <constraint firstAttribute="bottom" secondItem="IKO-az-d4t" secondAttribute="bottom" constant="8" id="zUM-ZP-1n1"/>
+                                        <constraint firstItem="IKO-az-d4t" firstAttribute="leading" secondItem="d5E-7E-rrw" secondAttribute="trailing" constant="16" id="pmw-xn-KMh"/>
+                                        <constraint firstItem="IKO-az-d4t" firstAttribute="top" secondItem="fBE-BV-VWJ" secondAttribute="top" constant="16" id="vvw-a1-dOo"/>
+                                        <constraint firstAttribute="bottom" secondItem="IKO-az-d4t" secondAttribute="bottom" constant="16" id="zUM-ZP-1n1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -75,15 +80,11 @@
                             <outlet property="delegate" destination="dDC-5C-Sbq" id="m22-cw-dwX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="le9-IS-3qK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vq5-EO-NNt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270.99236641221376" y="-422.53521126760563"/>
+            <point key="canvasLocation" x="655.72519083969462" y="-422.53521126760563"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
