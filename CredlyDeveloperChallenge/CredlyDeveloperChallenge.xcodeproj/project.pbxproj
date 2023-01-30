@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C05DE6C2984D455001735B5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05DE6B2984D455001735B5 /* Contact.swift */; };
+		4C05DE6C2984D455001735B5 /* UserContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05DE6B2984D455001735B5 /* UserContact.swift */; };
 		4C05DE702984D786001735B5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05DE6F2984D786001735B5 /* API.swift */; };
 		4C05DE722984E2CB001735B5 /* UserContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05DE712984E2CB001735B5 /* UserContactTableViewCell.swift */; };
+		4C05DE7729876DE1001735B5 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05DE7629876DE1001735B5 /* Styles.swift */; };
 		4CD2A17629835D4200898EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A17529835D4200898EF4 /* AppDelegate.swift */; };
 		4CD2A17829835D4200898EF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A17729835D4200898EF4 /* SceneDelegate.swift */; };
 		4CD2A17D29835D4200898EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD2A17B29835D4200898EF4 /* Main.storyboard */; };
@@ -44,9 +45,10 @@
 /* Begin PBXFileReference section */
 		038BEB7C46201A1B9CA40A1C /* Pods-CredlyDeveloperChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredlyDeveloperChallenge.release.xcconfig"; path = "Target Support Files/Pods-CredlyDeveloperChallenge/Pods-CredlyDeveloperChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		0D38BC4D4983FA1B417D82B4 /* Pods-CredlyDeveloperChallenge-CredlyDeveloperChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredlyDeveloperChallenge-CredlyDeveloperChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-CredlyDeveloperChallenge-CredlyDeveloperChallengeUITests/Pods-CredlyDeveloperChallenge-CredlyDeveloperChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4C05DE6B2984D455001735B5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		4C05DE6B2984D455001735B5 /* UserContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContact.swift; sourceTree = "<group>"; };
 		4C05DE6F2984D786001735B5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4C05DE712984E2CB001735B5 /* UserContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContactTableViewCell.swift; sourceTree = "<group>"; };
+		4C05DE7629876DE1001735B5 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		4CD2A17229835D4200898EF4 /* CredlyDeveloperChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CredlyDeveloperChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD2A17529835D4200898EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CD2A17729835D4200898EF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				4CD2A17B29835D4200898EF4 /* Main.storyboard */,
 				4CD2A18029835D4400898EF4 /* LaunchScreen.storyboard */,
 				4CD2A17E29835D4400898EF4 /* Assets.xcassets */,
+				4C05DE7629876DE1001735B5 /* Styles.swift */,
 			);
 			path = AppGlobal;
 			sourceTree = "<group>";
@@ -112,9 +115,34 @@
 		4C05DE6E2984D771001735B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4C05DE6B2984D455001735B5 /* Contact.swift */,
+				4C05DE6B2984D455001735B5 /* UserContact.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4C05DE7329876D1A001735B5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4C05DE6F2984D786001735B5 /* API.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4C05DE7429876D2C001735B5 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				4C05DE7529876D43001735B5 /* ContactsList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		4C05DE7529876D43001735B5 /* ContactsList */ = {
+			isa = PBXGroup;
+			children = (
+				4CD2A1A529835EF100898EF4 /* ContactsTableViewController.swift */,
+				4C05DE712984E2CB001735B5 /* UserContactTableViewCell.swift */,
+			);
+			path = ContactsList;
 			sourceTree = "<group>";
 		};
 		4CD2A16929835D4200898EF4 = {
@@ -144,10 +172,9 @@
 			children = (
 				4CD2A18329835D4400898EF4 /* Info.plist */,
 				4C05DE6D2984D74A001735B5 /* AppGlobal */,
-				4CD2A1A529835EF100898EF4 /* ContactsTableViewController.swift */,
+				4C05DE7429876D2C001735B5 /* Features */,
 				4C05DE6E2984D771001735B5 /* Models */,
-				4C05DE6F2984D786001735B5 /* API.swift */,
-				4C05DE712984E2CB001735B5 /* UserContactTableViewCell.swift */,
+				4C05DE7329876D1A001735B5 /* Networking */,
 			);
 			path = CredlyDeveloperChallenge;
 			sourceTree = "<group>";
@@ -432,9 +459,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD2A17629835D4200898EF4 /* AppDelegate.swift in Sources */,
+				4C05DE7729876DE1001735B5 /* Styles.swift in Sources */,
 				4C05DE702984D786001735B5 /* API.swift in Sources */,
 				4CD2A17829835D4200898EF4 /* SceneDelegate.swift in Sources */,
-				4C05DE6C2984D455001735B5 /* Contact.swift in Sources */,
+				4C05DE6C2984D455001735B5 /* UserContact.swift in Sources */,
 				4CD2A1A629835EF100898EF4 /* ContactsTableViewController.swift in Sources */,
 				4C05DE722984E2CB001735B5 /* UserContactTableViewCell.swift in Sources */,
 			);
