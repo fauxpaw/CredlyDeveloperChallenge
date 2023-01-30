@@ -56,7 +56,7 @@ struct UserContact: Decodable {
             let first3 = rawNumberString.dropLast(4).suffix(3)
             let zipCode = rawNumberString.prefix(3)
             return "(\(zipCode)) \(first3)-\(last4)"
-        case 11..<12:
+        case 11..<13:
             let last4 = rawNumberString.suffix(4)
             let first3 = rawNumberString.dropLast(4).suffix(3)
             let zipCode = rawNumberString.dropLast(7).suffix(3)
