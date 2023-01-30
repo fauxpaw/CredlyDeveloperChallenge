@@ -32,11 +32,17 @@ class ContactsTableViewController: UITableViewController {
         
         switch with {
         case .SwiftyJson:
-            API.getSwfityUsers { users in
-                self.users = users
-                DispatchQueue.main.async {
-                    self.refreshControl?.endRefreshing()
-                    self.tableView.reloadData()
+            API.getSwfityUsers { userResponse in
+                switch userResponse {
+                case .Success(let users):
+                    self.users = users
+                    DispatchQueue.main.async {
+                        self.refreshControl?.endRefreshing()
+                        self.tableView.reloadData()
+                    }
+                case .Fail(let error):
+                    print(error.localizedDescription) // in lieu of no company internal error logging system
+                    self.showError()
                 }
             }
         case .Decodable:
@@ -79,6 +85,14 @@ class ContactsTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    private func showError() {
+        let alertController = UIAlertController(title: "We're Sorry", message: "Your list of contacts is not available at this time. Please try again later.", preferredStyle: .alert)
+
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true)
+        }
     }
     
     @objc private func refreshUserContacts(_ sender: Any) {
