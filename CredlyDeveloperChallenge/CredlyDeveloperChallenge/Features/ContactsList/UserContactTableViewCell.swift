@@ -25,5 +25,13 @@ class UserContactTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    override func prepareForReuse() {
+        self.initialsLabel.backgroundColor = Color.secondaryHighlight
+        self.initialsLabel.text = ""
+        self.nameLabel.text = ""
+        self.emailLabel.text = ""
+        self.phoneNumberLabel.text = ""
+    }
 
 }
